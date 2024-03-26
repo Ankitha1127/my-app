@@ -6,9 +6,31 @@ import Col from 'react-bootstrap/Col';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
-// import { alignPropType } from 'react-bootstrap/esm/types';
+import { useState } from 'react';
 
 function RegisterPatient() {
+
+  const [details,setDetails] = useState({
+    name: "",
+    dob: "",
+    blood_group: "",
+    case: "",
+    address: "",
+    email: "",
+    gender: "",
+    phno: ""
+  });
+
+function handleChange(event)
+{
+const name1=(event.target.name);
+const value1=(event.target.value); 
+setDetails((prev)=>{
+  return{...prev,[name1]:value1}
+})
+};
+
+console.log(details);
   return (
     <div >
       <CardGroup className='group'>
@@ -24,7 +46,7 @@ function RegisterPatient() {
           <Col>
             <Form.Group className="mb-3" controlId="formBasicName">
               <FloatingLabel controlId="floatingName" label="Name">
-              <Form.Control type="text" placeholder="Enter name" />
+              <Form.Control type="text" name="name" placeholder="Enter name" onChange={handleChange}/>
               {/* <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text> */}
@@ -36,7 +58,7 @@ function RegisterPatient() {
           <Col xs={6}>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <FloatingLabel controlId="floatingPassword" label="DOB">
-              <Form.Control type="date" placeholder="" />
+              <Form.Control type="date" name="dob" placeholder="" onChange={handleChange}/>
               </FloatingLabel>
             </Form.Group>
           </Col>
@@ -49,7 +71,7 @@ function RegisterPatient() {
           <Col>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <FloatingLabel controlId="floatingPassword" label="Blood Group">
-              <Form.Select aria-label="Default select example">
+              <Form.Select aria-label="Default select example" name="blood_group"onChange={handleChange}>
               <option>Select blood group</option>
               <option value="A+">A+</option>
               <option value="A-">A-</option>
@@ -67,7 +89,7 @@ function RegisterPatient() {
           <Col>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <FloatingLabel controlId="floatingPassword" label="Case">
-              <Form.Control type="text" placeholder="Describe the case" />
+              <Form.Control type="text" name="case" placeholder="Describe the case" onChange={handleChange}/>
               </FloatingLabel>
             </Form.Group>
           </Col>
@@ -78,7 +100,7 @@ function RegisterPatient() {
             <Col>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <FloatingLabel controlId="floatingPassword" label="Address">
-                <Form.Control type="text" placeholder="Enter address" />
+                <Form.Control type="text" name="address" placeholder="Enter address" onChange={handleChange}/>
                 </FloatingLabel>
               </Form.Group>
             </Col>
@@ -86,7 +108,7 @@ function RegisterPatient() {
             <Col>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <FloatingLabel controlId="floatingPassword" label="Email ID">
-                <Form.Control type="email" placeholder="Enter Email" />
+                <Form.Control type="email" name="email" placeholder="Enter Email" onChange={handleChange}/>
                 </FloatingLabel>
               </Form.Group>
             </Col>
@@ -98,7 +120,7 @@ function RegisterPatient() {
             <Col>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <FloatingLabel controlId="floatingPassword" label="Gender">
-                <Form.Select aria-label="Default select example">
+                <Form.Select aria-label="Default select example" name="gender" onChange={handleChange}>
                   <option>Select gender</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -112,7 +134,7 @@ function RegisterPatient() {
             <Col>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <FloatingLabel controlId="floatingPassword" label="Contact Number">
-                <Form.Control type="text" placeholder="Enter contact number" />
+                <Form.Control type="text" name="phno" placeholder="Enter contact number" onChange={handleChange}/>
                 </FloatingLabel>
               </Form.Group>
               {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">

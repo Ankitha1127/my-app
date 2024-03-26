@@ -23,17 +23,12 @@ function Login()
         <Card.Body>
           <Card.Title><b>Login As</b></Card.Title>
           <Card.Text>
-            {/* <Link to="/">Doctor</Link> */}
             <ul>
-            <li>
-              <a href='/RegisterPatient'>Doctor</a>
-            </li>
             {/* <BrowserRouter>
-                <li><Link to="/RegisterDoctor">Doctor</Link></li>
-                <li><Link to="/RegisterPatient">Analytics Center</Link></li>
+                
                   <Routes>
-                    <Route path="RegisterDoctor" element={<RegisterDoctor/>}/>
-                    <Route path="RegisterPatient" element={<RegisterPatient/>}/>
+                    <Route exact path="/RegisterDoctor" element={<RegisterDoctor/>}/>
+                    <Route path="/RegisterPatient" element={<RegisterPatient/>}/>
                   </Routes>
             </BrowserRouter> */}
             </ul>
